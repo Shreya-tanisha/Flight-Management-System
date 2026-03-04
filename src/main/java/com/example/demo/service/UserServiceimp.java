@@ -30,7 +30,6 @@ public UserServiceimp(UserRepository ur, UserMapper usermap) {
 	public User save(UserRequestdto dto) {
 		
 		User user=usermap.toEntity(dto);
-		// TODO Auto-generated method stub
 		return ur.save(user);
 	}
 
@@ -56,7 +55,6 @@ public UserServiceimp(UserRepository ur, UserMapper usermap) {
 
 	@Override
 	public UserResponsedto update(UUID id, UserRequestdto dto) {
-		// TODO Auto-generated method stub
 		User user= ur.findById(id).orElseThrow(() ->
         new ResourceNotFoundException("User not found with id: " + id)
 );
@@ -70,7 +68,7 @@ public UserServiceimp(UserRepository ur, UserMapper usermap) {
 
 	@Override
 	public void delete(UUID id) {
-		// TODO Auto-generated method stub
+		
 		ur.deleteById(id);
 	}
 

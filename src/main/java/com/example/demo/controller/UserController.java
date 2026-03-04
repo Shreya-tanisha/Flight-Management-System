@@ -41,7 +41,7 @@ public class UserController {
         return userService.getById(id);
     }
 
-    // 🔹 Get All Users
+
     @GetMapping("/all")
     public List<UserResponsedto> findAllUser() {
         return userService.findAllUser();
