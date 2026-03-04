@@ -43,8 +43,8 @@ public class UserController {
 
     // 🔹 Get All Users
     @GetMapping("/all")
-    public List<UserResponsedto> findAll() {
-        return userService.findAll();
+    public List<UserResponsedto> findAllUser() {
+        return userService.findAllUser();
     }
 
     // 🔹 Update User

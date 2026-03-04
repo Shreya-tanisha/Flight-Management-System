@@ -10,7 +10,7 @@ import com.example.demo.responsedto.UserResponsedto;
 public interface UserService {
 	User save(UserRequestdto dto);
 	UserResponsedto getById(UUID id);
-	List<UserResponsedto> findAll();
+	List<UserResponsedto> findAllUser();
 	UserResponsedto update(UUID id,UserRequestdto dto);
 	void delete (UUID id);
 
