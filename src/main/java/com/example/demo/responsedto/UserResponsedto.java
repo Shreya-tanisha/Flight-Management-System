@@ -3,7 +3,7 @@ package com.example.demo.responsedto;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import lombok.Builder;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

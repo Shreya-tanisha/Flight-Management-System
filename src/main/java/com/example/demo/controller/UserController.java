@@ -29,13 +29,13 @@ public class UserController {
 	@Autowired
     UserService userService;
 
-    // 🔹 Save User
+    
     @PostMapping("/save")
     public User save(@RequestBody UserRequestdto dto) {
         return userService.save(dto);
     }
 
-    // 🔹 Get User By ID
+    
     @GetMapping("/{id}")
     public UserResponsedto getById(@PathVariable UUID id) {
         return userService.getById(id);
@@ -47,14 +47,14 @@ public class UserController {
         return userService.findAllUser();
     }
 
-    // 🔹 Update User
+   
     @PutMapping("/{id}")
     public UserResponsedto update(@PathVariable UUID id,
                                   @RequestBody UserRequestdto dto) {
         return userService.update(id, dto);
     }
 
-    // 🔹 Delete User
+    
     @DeleteMapping("/{id}")
     public String delete(@PathVariable UUID id) {
         userService.delete(id);
