@@ -2,17 +2,17 @@ package com.example.demo.service;
 
 import java.util.List;
 
+import com.example.demo.requestdto.AircraftRequestDto;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Repository.AircraftRepo;
-import com.example.demo.Requestdto.AircraftRequestdto;
-import com.example.demo.Responsedto.AircraftResponsedto;
+import com.example.demo.repository.AircraftRepo;
+import com.example.demo.responsedto.AircraftResponseDto;
 import com.example.demo.entity.Aircraft;
 import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.mapping.AircraftMapper;
 @Service
-public class AircraftserviceImp implements Aircraftservice {
+public class AircraftserviceImp implements com.example.demo.service.Aircraftservice {
 	private final AircraftRepo repository;
     private final AircraftMapper mapper;
 
@@ -24,20 +24,20 @@ public class AircraftserviceImp implements Aircraftservice {
 	}
 
 	@Override
-	public AircraftResponsedto save(AircraftRequestdto dto) {
+	public AircraftResponseDto save(AircraftRequestDto dto) {
 		Aircraft aircraft = mapper.toEntity(dto);
 		return mapper.toResponse(repository.save(aircraft));
 	}
 
 	@Override
-	public AircraftResponsedto getById(Long id) {
+	public AircraftResponseDto getById(Long id) {
 		Aircraft aircraft=repository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Aircraft not found with id: " + id)
                 );
 		return mapper.toResponse(aircraft);
 	}
 
 	@Override
-	public List<AircraftResponsedto> findAllAircraft() {
+	public List<AircraftResponseDto> findAllAircraft() {
 		  return repository.findAll()
 	                .stream()
 	                .map(mapper::toResponse)
@@ -46,7 +46,7 @@ public class AircraftserviceImp implements Aircraftservice {
 	}
 
 	@Override
-	public AircraftResponsedto update(Long id, AircraftRequestdto dto) {
+	public AircraftResponseDto update(Long id, AircraftRequestDto dto) {
 		 Aircraft aircraft = repository.findById(id)
 	                .orElseThrow(() ->
 	                        new ResourceNotFoundException("Aircraft not found with id: " + id)

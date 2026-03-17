@@ -1,17 +1,15 @@
 package com.example.demo.mapping;
 
-<<<<<<< HEAD
-public class AircraftMapper {
-=======
+
 import org.springframework.stereotype.Component;
 
-import com.example.demo.Requestdto.AircraftRequestdto;
-import com.example.demo.Responsedto.AircraftResponsedto;
+import com.example.demo.requestdto.AircraftRequestDto;
+import com.example.demo.responsedto.AircraftResponseDto;
 import com.example.demo.entity.Aircraft;
 
 @Component
 public class AircraftMapper {
-	public Aircraft toEntity(AircraftRequestdto dto) {
+	public Aircraft toEntity(AircraftRequestDto dto) {
         Aircraft aircraft = new Aircraft();
         aircraft.setModel(dto.getModel());
         aircraft.setManufacturer(dto.getManufacturer());
@@ -22,8 +20,9 @@ public class AircraftMapper {
         aircraft.setActive(dto.getActive());
         return aircraft;
     }
-	 public AircraftResponsedto toResponse(Aircraft aircraft) {
-	        AircraftResponsedto dto = new AircraftResponsedto();
+
+	public AircraftResponseDto toResponse(Aircraft aircraft) {
+	        AircraftResponseDto dto = new AircraftResponseDto();
 	        dto.setId(aircraft.getId());
 	        dto.setModel(aircraft.getModel());
 	        dto.setManufacturer(aircraft.getManufacturer());
@@ -35,6 +34,5 @@ public class AircraftMapper {
 	        dto.setCreatedAt(aircraft.getCreatedAt());
 	        return dto;
 	    }
->>>>>>> 3b87fad (Added Aircraft module (entity, controller, service, repository, dto, mapper))
 
 }

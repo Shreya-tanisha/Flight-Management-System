@@ -1,11 +1,11 @@
-package com.example.demo.Responsedto;
+package com.example.demo.responsedto;
 
 import java.time.LocalDateTime;
 
 import lombok.Data;
 
 @Data
-public class AircraftResponsedto {
+public class AircraftResponseDto {
 	 private Long id;
 	    private String model;
 	    private String manufacturer;

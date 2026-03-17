@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Requestdto.AircraftRequestdto;
-import com.example.demo.Responsedto.AircraftResponsedto;
+import com.example.demo.requestdto.AircraftRequestDto;
+import com.example.demo.responsedto.AircraftResponseDto;
 import com.example.demo.service.Aircraftservice;
 
 @RestController
@@ -24,26 +24,26 @@ public class Aircraftcontoller {
 
 	    
 	    @PostMapping
-	    public AircraftResponsedto saveAircraft(@RequestBody AircraftRequestdto dto) {
+	    public AircraftResponseDto saveAircraft(@RequestBody AircraftRequestDto dto) {
 	        return aircraftService.save(dto);
 	    }
 
 	    
 	    @GetMapping("/{id}")
-	    public AircraftResponsedto getAircraftById(@PathVariable Long id) {
+	    public AircraftResponseDto getAircraftById(@PathVariable Long id) {
 	        return aircraftService.getById(id);
 	    }
 
 	    
 	    @GetMapping
-	    public List<AircraftResponsedto> getAllAircraft() {
+	    public List<AircraftResponseDto> getAllAircraft() {
 	        return aircraftService.findAllAircraft();
 	    }
 
 	   
 	    @PutMapping("/{id}")
-	    public AircraftResponsedto updateAircraft(@PathVariable Long id,
-	                                              @RequestBody AircraftRequestdto dto) {
+	    public AircraftResponseDto updateAircraft(@PathVariable Long id,
+	                                              @RequestBody AircraftRequestDto dto) {
 	        return aircraftService.update(id, dto);
 	    }
 

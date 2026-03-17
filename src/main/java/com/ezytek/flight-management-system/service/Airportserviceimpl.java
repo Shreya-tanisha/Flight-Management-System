@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Repository.AirportRepository;
+import com.example.demo.repository.AirportRepository;
 import com.example.demo.entity.Airport;
 import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.mapping.Airportmapping;
@@ -13,7 +13,7 @@ import com.example.demo.requestdto.Airportrequestdto;
 import com.example.demo.responsedto.Airportresponse;
 
 @Service
-public class Airportserviceimpl implements Airportservice{
+public class Airportserviceimpl implements com.example.demo.service.Airportservice {
 	private final AirportRepository repo;
 	private final Airportmapping mapper;
 	
