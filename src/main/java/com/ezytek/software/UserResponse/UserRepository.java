@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.ezytek.software.entity.User;
 @Repository
-public interface UserRepository extends JpaRepository<User,Long> {
+public interface UserRepository extends JpaRepository<User,UUID> {
 
 }
